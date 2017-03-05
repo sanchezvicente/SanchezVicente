@@ -10,6 +10,12 @@ public class Fecha {
 	private	int mes;
 	private int	anio;
 	
+	private boolean bisiesto(){
+		if ( (anio % 400 == 0) || ( (anio % 4 == 0) && (anio % 100 != 0)))
+			return true;
+		else return false;
+			}
+	
 	private int diasMes(){
 		// determinamos la cantidad de días del mes:
 		int diasMes = 0;
@@ -28,13 +34,12 @@ public class Fecha {
 			case 11 : diasMes = 30;
 			break;
 			case 2 : // verificación de año bisiesto
-				if ( (anio % 400 == 0) || ( (anio % 4 == 0) && (anio % 100 != 0)
-						) )
+				 if (bisiesto())
 					diasMes = 29;
-				else
+				 else
 					diasMes = 28;
 					break;
-				}
+		}
 		return diasMes;
 	}
 	
