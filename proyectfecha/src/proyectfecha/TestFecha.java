@@ -1,7 +1,16 @@
 package proyectfecha;
-
+/**
+ * Esta clase es una clase test que genera 4 objetos de la clase Fecha 
+ * para determinar si funciona bien o no, dado el hecho de que el primero  es válido 
+ * y los otros 3  no son válidos.
+ * @author Vicente Sánchez Renau
+ *
+ */
 public class TestFecha {
-
+/**
+ * Clase principal para la prueba de la clase Fecha
+ * @param args
+ */
 	public static void main(String[] args) {
 		
 		Fecha Fecha1 = new Fecha(1,1,91);
