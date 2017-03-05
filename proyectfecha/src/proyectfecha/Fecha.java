@@ -10,17 +10,7 @@ public class Fecha {
 	private	int mes;
 	private int	anio;
 	
-
-	public Fecha(int dia, int mes, int anio) {
-		this.dia = dia;
-		this.mes = mes;
-		this.anio = anio;
-		}
-	public boolean valida ( ) {
-		if (dia < 1 || dia > 31) return false;
-		if (mes < 1 || mes > 12) return false;
-		if (anio < 0) return false;
-		
+	private int diasMes(){
 		// determinamos la cantidad de días del mes:
 		int diasMes = 0;
 		switch (mes) {
@@ -45,9 +35,22 @@ public class Fecha {
 					diasMes = 28;
 					break;
 				}
-				if (dia>diasMes) return false;
-				else return true;
-				}
+		return diasMes;
+	}
+	
+	
+	public Fecha(int dia, int mes, int anio) {
+		this.dia = dia;
+		this.mes = mes;
+		this.anio = anio;
+		}
+	public boolean valida ( ) {
+		if (dia < 1 || dia > 31) return false;
+		if (mes < 1 || mes > 12) return false;
+		if (anio < 0) return false;
+		if (dia>diasMes()) return false;
+		else return true;
+		}
 		
 		
 	public static void main(String[] args) throws NumberFormatException, IOException  {
